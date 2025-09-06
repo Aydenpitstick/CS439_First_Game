@@ -7,7 +7,7 @@ class Game(simpleGE.Scene):
         self.knight = Knight(self)
         self.platforms = [Platform(self, (100, 450))]
         self.setCaption("Game")
-        self.NUM_BULLETS = 100
+        self.NUM_BULLETS = 5
         self.currentBullet = 0       
         self.bullets = []
         self.sprites = [self.knight, self.platforms, self.bullets]
@@ -74,7 +74,7 @@ class Knight(simpleGE.Sprite) :
             if walk == True:
                 self.copyImage(self.plyrWalk.getNext(self.animRow))
             else:
-                self.copyImage(self.plyrWalk.getCellImage(8, self.animRow))
+                self.copyImage(self.plyrWalk.getCellImage(0, self.animRow))
         
         for platform in self.scene.platforms:
             if self.collidesWith(platform):                
